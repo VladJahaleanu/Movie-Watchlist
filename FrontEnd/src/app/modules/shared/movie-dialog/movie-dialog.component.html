@@ -1,0 +1,20 @@
+<div class="container">
+    <h1>Edit Movie</h1>
+
+    <form [formGroup]="movieEditForm">
+        <mat-form-field appearance="fill">
+            <mat-label>Movie Name</mat-label>
+            <input matInput placeholder="Name" formControlName="name" required>
+          </mat-form-field>
+
+          <mat-form-field appearance="fill">
+            <mat-label>Movie Duration</mat-label>
+            <input matInput placeholder="Duration" formControlName="duration" required >
+          </mat-form-field>
+        
+    </form>
+    <div class="actions">
+        <button mat-stroked-button (click)="closeDialog()">Cancel</button>
+        <button mat-stroked-button (click)="onSave()">Save</button>
+    </div>
+</div>

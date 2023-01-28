@@ -1,0 +1,29 @@
+.container {
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    
+}
+.example-card {
+    max-width: 400px;
+    border-radius: 10px;
+  }
+
+.cardTitle {
+    font-size: 30px;
+    //font-weight: bold;
+  }
+
+  .cardSubtitle {
+    font-size: 20px;
+  }
+
+  .cardContent {
+      font-size: 15px;
+  }
+  

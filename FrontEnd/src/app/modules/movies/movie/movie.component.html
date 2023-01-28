@@ -1,0 +1,21 @@
+<div class="container">
+    <mat-card class="example-card">
+        <mat-card-header>
+          <mat-card-title class="cardTitle">{{movie.name}}</mat-card-title>
+          <mat-card-subtitle class="cardSubtitle">Details:</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content class="cardContent">
+          <p>
+            Directed by {{movie.directorName}}
+          </p>
+          <p>
+            Duration: {{movie.duration}} Minutes
+          </p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-stroked-button (click)="onEdit()">Edit details</button>
+        </mat-card-actions>
+      </mat-card>
+      
+      
+</div>

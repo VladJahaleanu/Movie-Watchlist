@@ -1,0 +1,73 @@
+<div class="container">
+    <h1 class="title"> Movie List </h1>
+
+    <table mat-table [dataSource]="movies" class="mat-elevation-z8 table">
+
+        <ng-container matColumnDef="id">
+            <th mat-header-cell *matHeaderCellDef> Id </th>
+            <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef> Name </th>
+            <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="duration">
+            <th mat-header-cell *matHeaderCellDef> Duration </th>
+            <td mat-cell *matCellDef="let element"> {{element.duration}} Minutes</td>
+        </ng-container>
+
+        <!-- <ng-container matColumnDef="details">
+            <th mat-header-cell *matHeaderCellDef> Details </th>
+            <td mat-cell *matCellDef="let element">
+                <mat-icon (click)="goToMovieDetailPage(element.id)">
+                    person
+                </mat-icon>
+            </td>
+        </ng-container> -->
+
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row 
+        (click)="goToMovieDetailPage(row.id)"
+        *matRowDef="let row; columns: displayedColumns;" appRowSelection></tr>
+    </table>
+</div>
+<div class="container">
+    <mat-expansion-panel class="expansion">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Add a Movie
+          </mat-panel-title>
+          <mat-panel-description>
+            Enter movie details
+            <mat-icon>movie</mat-icon>
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+
+        <mat-form-field appearance="fill">
+          <mat-label>ID</mat-label>
+          <input matInput id="movieDuration" [(ngModel)]="id">
+        </mat-form-field>
+    
+        <mat-form-field appearance="fill">
+          <mat-label>Name</mat-label>
+          <input matInput id="movieName" [(ngModel)]="movieName">
+        </mat-form-field>
+    
+        <mat-form-field appearance="fill">
+          <mat-label>Duration (in minutes)</mat-label>
+          <input matInput id="movieDuration" [(ngModel)]="movieDuration">
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Director's Name</mat-label>
+            <input matInput id="directorFName" [(ngModel)]="directorName">
+        </mat-form-field>
+
+        <button mat-stroked-button (click)="addData()">Submit</button>
+
+    
+      </mat-expansion-panel>
+</div>
