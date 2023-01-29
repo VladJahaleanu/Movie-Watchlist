@@ -10,11 +10,16 @@ import { RowSelectionDirective } from './row-selection.directive';
 import { SharedModule } from './modules/shared/shared.module';
 import {MatDialogModule} from '@angular/material/dialog';
 import { ReactiveFormsModule } from '@angular/forms';
+import { LoginComponent } from './modules/auth/login/login.component';
+import { RegisterComponent } from './modules/auth/register/register.component';
+import { AuthModule } from './modules/auth/auth.module';
 
 
 @NgModule({
   declarations: [
     AppComponent,
+    // LoginComponent,
+    // RegisterComponent,
   ],
   imports: [
     BrowserModule,
@@ -24,7 +29,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     MoviesModule,
     SharedModule,
     MatDialogModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AuthModule
   ],
   providers: [],
   bootstrap: [AppComponent]
