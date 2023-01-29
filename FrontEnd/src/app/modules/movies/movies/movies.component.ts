@@ -24,7 +24,10 @@ export class MoviesComponent implements OnInit {
 
   ngOnInit(): void {
     this.getMovies();
-    console.log(this.movies);
+    setTimeout(() => {
+      console.log(this.movies);
+    }, 60);
+    
   }
 
   public getMovies(): void {
@@ -48,6 +51,10 @@ export class MoviesComponent implements OnInit {
 
     this.moviesService.createMovie(movieToAdd).subscribe( () => {
       this.getMovies();
+      this.movieName = '';
+      this.directorName = '';
+      this.id = parseInt(this.id) + 1;
+      this.movieDuration = 0;
     });
   }
 }

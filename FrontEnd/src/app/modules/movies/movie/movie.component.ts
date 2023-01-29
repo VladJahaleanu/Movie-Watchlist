@@ -13,7 +13,11 @@ export class MovieComponent implements OnInit, OnDestroy {
   
   public id: any;
   private sub: any;
-  public movie;
+  public movie: any = {
+    name: '',
+    directorName: '',
+    duration: ''
+  };
   // public isValid;
   public movieForDialog;
 
@@ -24,12 +28,13 @@ export class MovieComponent implements OnInit, OnDestroy {
   ) { }
 
   ngOnInit(): void {
-    this.sub = this.route.params.subscribe( params => {
-      this.id = +params['id'];
-      if (this.id !== null) {
-        this.getMovieDetails();
-      }
-    });
+      this.sub = this.route.params.subscribe( params => {
+        this.id = +params['id'];
+        if (this.id !== null) {
+          this.getMovieDetails();
+        }
+      });
+    
   }
 
   public getMovieDetails(): void {
@@ -40,7 +45,6 @@ export class MovieComponent implements OnInit, OnDestroy {
         name: this.movie.name,
         duration: this.movie.duration
       };
-      // this.isValid = this.movie.movieActors.length;
       
       console.log(this.movie);
     });

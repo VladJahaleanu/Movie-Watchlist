@@ -12,8 +12,11 @@
             <input matInput placeholder="Password" formControlName="password" required type="password">
           </mat-form-field>
 
-          <button mat-stroked-button (click)="onClickLogin()">Login</button>
-          <button mat-stroked-button (click)="onClickRegister()">Register</button>
+          <div class="actions">
+            <button mat-stroked-button (click)="onClickLogin()">Login</button>
+            <button mat-stroked-button (click)="onClickRegister()">Go to Register</button>
+          </div>
+          
         
     </form>
 </div>
